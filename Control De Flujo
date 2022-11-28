@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace FPU3C_Ejemplo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            //Limpie consola y perzonalice con colores
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Black;
+            
+        	//Declate Variables
+        	double pri = 0, morena = 0, verde = 0, pan = 0, movimientoNaranja = 0, votos = 0;
+        	int opcion = -1;
+        	
+        	//Mostre Letreros
+        	Console.WriteLine("Votos\n");
+        	
+        	//Inicio un ciclo para ingresar votos
+        	while(opcion != 0)
+        	{
+        		Console.WriteLine("¿Por cual candidato deseas votar?\tIngresa el numero correspondiente a tu candidato\t");
+        		Console.WriteLine("Si desesas parar, escribe 0\n");
+        		Console.WriteLine("1-pri\t2-morena\t3-verde\t4-pan\t5-Movimiento Naranja");
+        		opcion = Convert.ToInt32(Console.ReadLine());
+        		
+        		if(opcion ==1)
+        		{
+        			++pri;
+        			++votos;
+        		}
+        		else if(opcion ==2)
+        		{
+        			++morena;
+        			++votos;
+        		}
+        		else if(opcion ==3)
+        		{
+        			++verde;
+        			++votos;
+        		}
+        		else if(opcion ==4)
+        		{
+        			++pan;
+        			++votos;
+        		}
+        		else if(opcion ==5)
+        		{
+        			++movimientoNaranja;
+        			++votos;
+        		}
+        	}
+        	//Doy resultados y su estadistica
+        Console.Clear();
+        Console.WriteLine("Estafisticas\n");
+        Console.WriteLine("Pri:\t{0}\t{1}%", pri, pri * 100 / votos);
+        Console.WriteLine("Morena:\t{0}\t{1}%", morena, morena * 100 / votos);
+        Console.WriteLine("Verde:\t{0}\t{1}%", verde, verde * 100 / votos);    
+        Console.WriteLine("Pan:\t{0}\t{1}%", pan, pan * 100 / votos);
+        Console.WriteLine("Movimienti Naranja:\t{0}\t{1}%", movimientoNaranja, movimientoNaranja * 100 / votos);	
+        Console.ReadKey();
+        	
+        }
+    }
+}
